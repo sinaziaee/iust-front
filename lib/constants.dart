@@ -8,3 +8,9 @@ final TextStyle kCustomTextStyle = TextStyle(
   fontSize: 15,
   fontWeight: FontWeight.w300,
 );
+
+final TextStyle kBlackTextStyle = TextStyle(
+  color: Colors.black,
+  fontSize: 15,
+  fontWeight: FontWeight.w100,
+);
