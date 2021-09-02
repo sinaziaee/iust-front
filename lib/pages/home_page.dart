@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:iust/constants.dart';
+import 'package:iust/pages/base_page.dart';
+import 'package:iust/widgets/foot_bar.dart';
+import 'package:iust/widgets/person_profile.dart';
 
 class HomePage extends StatelessWidget {
   final Size size;
@@ -10,12 +13,17 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return BasePage(
+      size: size,
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: size.width * 0.17),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: ListView(
+          shrinkWrap: true,
+          physics: NeverScrollableScrollPhysics(),
           children: [
+            SizedBox(
+              height: size.height * 0.1,
+            ),
             Text(
               'Course Description',
               style: kBlackTextStyle.copyWith(
@@ -32,9 +40,61 @@ class HomePage extends StatelessWidget {
               ' systems.',
               style: kBlackTextStyle.copyWith(),
             ),
+            SizedBox(
+              height: 40,
+            ),
+            Text(
+              'Course Instructor',
+              style: kBlackTextStyle.copyWith(
+                fontSize: 20,
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            PersonProfile(
+              name: 'Behrooz Minaee',
+              path: 'assets/images/minaee.jpg',
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            Text(
+              'Teaching Assistants',
+              style: kBlackTextStyle.copyWith(
+                fontSize: 20,
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            GridView.count(
+              shrinkWrap: true,
+              childAspectRatio: 2 / 3,
+              crossAxisCount: giveRowCount(size.width),
+              physics: NeverScrollableScrollPhysics(),
+              children: [
+                for (int i = 0; i < 8; i++) ...[
+                  PersonProfile(
+                    name: 'Behrooz Minaee',
+                    path: 'assets/images/minaee.jpg',
+                  ),
+                ],
+              ],
+            ),
           ],
         ),
       ),
     );
+  }
+
+  int giveRowCount(double width) {
+    if (width > 1000) {
+      return 5;
+    } else if (width > 720) {
+      return 4;
+    } else {
+      return 2;
+    }
   }
 }

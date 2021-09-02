@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 
 class AppbarTitle extends StatelessWidget {
-
   final Size size;
+
   AppbarTitle(this.size);
 
   @override
@@ -24,21 +24,36 @@ class AppbarTitle extends StatelessWidget {
           children: [
             Text(
               'Iran University of Science and Technology',
-              style: kCustomTextStyle.copyWith(),
+              style: kCustomTextStyle.copyWith(
+                fontSize: getTitleWidth(),
+              ),
             ),
             Text(
               'Introduction to Artificial Intelligence',
               style: kCustomTextStyle.copyWith(
-                fontSize: 30,
+                fontSize: getTitleWidth() * 2,
               ),
             ),
             Text(
               'Winter 2021(Fall 1400)',
-              style: kCustomTextStyle.copyWith(),
+              style: kCustomTextStyle.copyWith(
+                fontSize: getTitleWidth(),
+              ),
             ),
           ],
         ),
       ],
     );
+  }
+
+  double getTitleWidth() {
+    double width = size.width;
+    if (width > 1000) {
+      return 15;
+    } else if (width > 720) {
+      return 10;
+    } else {
+      return 10;
+    }
   }
 }
