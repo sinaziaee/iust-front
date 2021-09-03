@@ -17,7 +17,9 @@ class LecturePage extends StatelessWidget {
     return BasePage(
       size: size,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: size.width * 0.1),
+        padding: EdgeInsets.symmetric(
+          horizontal: size.width * 0.1,
+        ),
         child: ListView(
           shrinkWrap: true,
           physics: NeverScrollableScrollPhysics(),
@@ -49,7 +51,7 @@ class LecturePage extends StatelessWidget {
               itemBuilder: (context, index) {
                 return LecturesItem(
                   size: size,
-                  isLast: index == 5-1,
+                  isLast: index == 5 - 1,
                 );
               },
             ),
