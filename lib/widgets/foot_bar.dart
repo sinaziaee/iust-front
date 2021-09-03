@@ -13,7 +13,7 @@ class FootBarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     if (size.width > 720) {
       return Container(
-        height: size.height * 0.13,
+        height: size.height * 0.15,
         child: Column(
           children: [
             Divider(),

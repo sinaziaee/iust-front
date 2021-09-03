@@ -14,3 +14,10 @@ final TextStyle kBlackTextStyle = TextStyle(
   fontSize: 15,
   fontWeight: FontWeight.w100,
 );
+
+final TextStyle kColumnTableStyle = TextStyle(
+  color: kBackgroundColor,
+  fontSize: 18,
+  fontWeight: FontWeight.bold,
+);
+

@@ -3,12 +3,12 @@ import 'package:flutter/rendering.dart';
 import 'package:iust/constants.dart';
 import 'package:iust/models/tab.dart';
 import 'package:iust/models/tabs_db.dart';
-import 'package:iust/pages/assignment_page.dart';
+import 'package:iust/pages/schedule_page.dart';
 import 'package:iust/pages/course_material_page.dart';
 import 'package:iust/pages/final_project_page.dart';
 import 'package:iust/pages/home_page.dart';
 import 'package:iust/pages/lectures_page.dart';
-import 'package:iust/pages/schedule_page.dart';
+import 'package:iust/pages/assignment_page.dart';
 import 'package:iust/widgets/appbar_title.dart';
 import 'package:iust/widgets/cutom_tabbar.dart';
 
@@ -43,7 +43,9 @@ class _HomeScreenState extends State<HomeScreen> {
             HomePage(
               size: size,
             ),
-            SchedulePage(),
+            SchedulePage(
+              size: size,
+            ),
             LecturePage(),
             AssignmentPage(),
             FinalProjectPage(),
