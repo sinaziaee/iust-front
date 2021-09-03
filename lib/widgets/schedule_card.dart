@@ -18,6 +18,11 @@ class ScheduleCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: type == 'Assignment'
+          ? kLightBlue
+          : type == 'Due'
+              ? kLightRed
+              : Colors.white,
       elevation: 2,
       child: Padding(
         padding: EdgeInsets.symmetric(
