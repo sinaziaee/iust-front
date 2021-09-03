@@ -16,6 +16,9 @@ class BasePage extends StatelessWidget {
       child: Column(
         children: [
           child,
+          SizedBox(
+            height: size.height*0.1,
+          ),
           FootBarWidget(size: size),
         ],
       ),

@@ -46,7 +46,9 @@ class _HomeScreenState extends State<HomeScreen> {
             SchedulePage(
               size: size,
             ),
-            LecturePage(),
+            LecturePage(
+              size: size,
+            ),
             AssignmentPage(),
             FinalProjectPage(),
             CourseMaterialPage(),
